@@ -1,0 +1,11 @@
+format .pem :
+
+openssl req -x509 -out cert.pem -keyout key.pem `
+  -newkey rsa:2048 -nodes -sha256 `
+  -subj "/CN=127.0.0.1" -extensions EXT `
+  -config 127.0.0.1.cnf
+
+
+format .cert dan .key :
+
+openssl req -x509 -newkey rsa:2048 -nodes -sha256 -out cert.cert -keyout key.key -subj "/CN=127.0.0.1" -days 365 -extensions v3_req -config 127.0.0.1.cnf

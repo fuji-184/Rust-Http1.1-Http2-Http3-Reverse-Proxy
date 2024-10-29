@@ -1,0 +1,16 @@
+[req]
+default_bits       = 2048
+distinguished_name = req_distinguished_name
+req_extensions     = v3_req
+
+[req_distinguished_name]
+C  = US
+ST = California
+L  = San Francisco
+O  = Your Organization
+OU = Your Organizational Unit
+CN = 127.0.0.1
+
+[v3_req]
+keyUsage = critical, digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
