@@ -25,3 +25,13 @@ quinn = { version = "0.11", default-features = false, features = [
 rustls-native-certs = "0.8.0"
 futures = "0.3.31"
 hyper-tls = "0.6.0"
+
+[profile.release]
+codegen-units = 1
+lto = "fat"
+opt-level = "3"
+panic = "abort"
+codegen-units = 1
+
+[build]
+rustflags = ["-C", "target-cpu=native"]
